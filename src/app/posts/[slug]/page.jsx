@@ -46,14 +46,14 @@ export async function generateMetadata({ params }) {
   const post = await getData(params.slug)
   if (!post) return notFound()
   return {
-    title: post.title,
-    description: post.description || post.seo?.description,
+    title: post?.title,
+    description: post?.description || post?.seo?.description,
     openGraph: {
       images: [
         {
-          url: post.coverImage?.url,
-          width: post.coverImage?.width,
-          height: post.coverImage?.height
+          url: post?.coverImage?.url,
+          width: post?.coverImage?.width,
+          height: post?.coverImage?.height
         }
       ]
     }
@@ -71,7 +71,7 @@ export default async function Post({ params }) {
         <div className="space-y-1">
           <div>
             <h1 className="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-              {post.title}
+              {post?.title}
             </h1>
           </div>
         </div>
@@ -84,21 +84,21 @@ export default async function Post({ params }) {
           <dt className="mb-2 text-sm font-medium leading-5">Written by</dt>
           <dd>
             <ul className="space-x-8 sm:space-x-12 lg:space-x-0 lg:space-y-8">
-              <li key={post.author.remoteId} className="flex space-x-2">
+              <li key={post?.author?.remoteId} className="flex space-x-2">
                 <Image
                   className="w-10 h-10 rounded-full"
-                  src={post.author.picture.url}
-                  width={post.author.picture.width}
-                  height={post.author.picture.height}
-                  alt={post.author.name}
+                  src={post?.author?.picture?.url}
+                  width={post?.author?.picture?.width}
+                  height={post?.author?.picture?.height}
+                  alt={post?.author?.name}
                 />
                 <dl className="flex-1 text-sm font-medium leading-5">
                   <dt className="sr-only">Name</dt>
-                  <dd className="text-gray-900">{post.author.name}</dd>
-                  {post.author.title && (
+                  <dd className="text-gray-900">{post?.author?.name}</dd>
+                  {post?.author?.title && (
                     <>
                       <dt className="sr-only">Title</dt>
-                      <dd className="text-gray-500">{post.author.title}</dd>
+                      <dd className="text-gray-500">{post?.author?.title}</dd>
                     </>
                   )}
                 </dl>

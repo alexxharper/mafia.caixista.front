@@ -1,4 +1,4 @@
-# hygraph-nextjs-blog-starter
+# Mafia Caixista blog
 
 
 > A [Next.js](httsp://nextjs.org) starter for creating a basic blog with [Hygraph](https://hygraph.com)
