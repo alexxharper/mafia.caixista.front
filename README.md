@@ -10,8 +10,16 @@
 
 1. **Clone and install the project**
 
+*With Github CLI*
+
 ```shell
-npx degit git@github.com:hygraph/hygraph-nextjs-blog-starter.git
+gh repo clone alexxharper/mafia.caixista.front
+```
+
+*With HTTPS*
+
+```shell
+git clone https://github.com/alexxharper/mafia.caixista.front.git
 ```
 
 2. **Provide your Hygraph project keys**
@@ -37,8 +45,8 @@ HYGRAPH_TOKEN=""
 Install the dependencies and start the Next.js dev server:
 
 ```shell
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 ## Features
