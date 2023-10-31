@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { SingleNav } from '@/queries/navigations'
+
+
 async function getNav(navId) {
   const res = await fetch(process.env.HYGRAPH_ENDPOINT, {
     method: 'POST',
